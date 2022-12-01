@@ -9,10 +9,13 @@
 
 
 <template>
+  <SidebarVue>
   
-<img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
+  </SidebarVue>
 
-  
+
+
+
 
 </template>
 
@@ -20,6 +23,7 @@
 
 
 <script setup>
+import SidebarVue from './components/Sidebar.vue';
 
 
 </script>
