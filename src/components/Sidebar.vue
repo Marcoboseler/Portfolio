@@ -17,36 +17,26 @@ html {
     top: 0;
     overflow-x: hidden;
     
-    background-color: #F1F3F5;
+    background-color: var(--myGray);
 }
-
 /* EMBLEM */
 .wrapper {
-    font-size: 2.1rem;
-    height: 2em;
+    font-size: 2rem;
+    height: 2em;;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    mix-blend-mode: screen;
-    
-    &.invert {
-        span {
-            color: black;
-            
-            &::before {
-                -webkit-text-stroke: .1em var(--color);
-            }
-        }
-    }
+    mix-blend-mode:darken;
     
     span {
-        --color: #ffba11;
+        --color: #F1F3F5;
         font-family: Impact, 'Anton', Haettenschweiler, 'Arial Narrow Bold', sans-serif;
         font-weight: 700;
         font-style: italic;
         display: block;
         position: absolute;
+        top: 1.5em;
         color: var(--color);
         letter-spacing: -.005em;
 
@@ -60,7 +50,7 @@ html {
 
         &::before {
             position: absolute;
-            -webkit-text-stroke: .1em black;
+            -webkit-text-stroke: .07em black;
             z-index: 0;
         }
 
@@ -69,7 +59,7 @@ html {
         }
 
         &:last-child {
-            --color: #b6acff;
+            --color: #F1F3F5;
             transform: translate(.255em, .25em);
         }
     }
@@ -80,13 +70,14 @@ html {
     position: relative;
     width: auto;
     height: 180px;
-    background-color: rgba(44, 105, 165, 0.95);
+    background-color: var(--myYellow);
 }
 
 #lowerEmblem {
     position: absolute;
-    bottom: 1rem;
-    font-family: 'Anton', Haettenschweiler, "kanit", sans-serif;
+    bottom: 2.8rem;
+    font-family: 'kanit', sans-serif;
+    color: rgba(0, 0, 0, 0.7);
     font-size: 0.7rem;
     font-weight: 100;
     
@@ -131,7 +122,7 @@ html {
 
 <aside id="sidebar" class="flex flex-col">
     <div id="emblem" class="flex justify-center">
-        <div class="wrapper pt-14">
+        <div class="wrapper">
             <span data-text="Marco"></span>
             <span data-text="Louis"></span>
         </div>
