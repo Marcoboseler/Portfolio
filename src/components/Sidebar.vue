@@ -1,6 +1,10 @@
-<style>
+
+<style lang="scss">
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
 
 html {
+
     font-size: 18px;
 }
 
@@ -16,11 +20,76 @@ html {
     background-color: #F1F3F5;
 }
 
+/* EMBLEM */
+.wrapper {
+    font-size: 2.1rem;
+    height: 2em;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    mix-blend-mode: screen;
+    
+    &.invert {
+        span {
+            color: black;
+            
+            &::before {
+                -webkit-text-stroke: .1em var(--color);
+            }
+        }
+    }
+    
+    span {
+        --color: #ffba11;
+        font-family: Impact, 'Anton', Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        font-weight: 700;
+        font-style: italic;
+        display: block;
+        position: absolute;
+        color: var(--color);
+        letter-spacing: -.005em;
+
+        &::before, &::after {
+            content: attr(data-text);
+            display: block;
+            position: relative;
+            padding: 0 .1em;
+            z-index: 1;
+        }
+
+        &::before {
+            position: absolute;
+            -webkit-text-stroke: .1em black;
+            z-index: 0;
+        }
+
+        &:first-child {
+            transform: translate(-.255em, -.25em);
+        }
+
+        &:last-child {
+            --color: #b6acff;
+            transform: translate(.255em, .25em);
+        }
+    }
+}
+
 /* PARENT ELEMENTS */
 #emblem {
+    position: relative;
     width: auto;
     height: 180px;
     background-color: rgba(44, 105, 165, 0.95);
+}
+
+#lowerEmblem {
+    position: absolute;
+    bottom: 1rem;
+    font-family: 'Anton', Haettenschweiler, "kanit", sans-serif;
+    font-size: 0.7rem;
+    font-weight: 100;
+    
 }
 
 #pageLinks {
@@ -42,6 +111,7 @@ html {
 /* CHILD ELEMENTS */
 .btn {
     width: 100%;
+ 
     padding: 0.3rem 0px;
     padding-right: 0.5rem;
 }
@@ -54,19 +124,20 @@ html {
     background-color: rgba(44, 105, 165, 0.7);
     border-left: 0.2rem solid crimson;
 }
-
-
-
 </style>
-
 
 
 <template>
 
-
 <aside id="sidebar" class="flex flex-col">
-    <div id="emblem" class="">
-
+    <div id="emblem" class="flex justify-center">
+        <div class="wrapper pt-14">
+            <span data-text="Marco"></span>
+            <span data-text="Louis"></span>
+        </div>
+        <div id="lowerEmblem">
+            Web developer
+        </div>
     </div>
 
     <div id="pageLinks" class="flex flex-col items-center gap-2">
@@ -84,12 +155,7 @@ html {
     </div>
 </aside>
     
-
 </template>
-
-
-
-
 
 
 <script setup>
