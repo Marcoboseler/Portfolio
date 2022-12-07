@@ -1,10 +1,6 @@
-
 <style lang="scss">
-@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
-
 
 html {
-
     font-size: 18px;
 }
 
@@ -18,69 +14,63 @@ html {
     overflow-x: hidden;
     
     background-color: var(--myGray);
-}
-/* EMBLEM */
-.wrapper {
-    font-size: 2rem;
-    height: 2em;;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    mix-blend-mode:darken;
-    
-    span {
-        --color: #F1F3F5;
-        font-family: Impact, 'Anton', Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-        font-weight: 700;
-        font-style: italic;
-        display: block;
-        position: absolute;
-        top: 1.5em;
-        color: var(--color);
-        letter-spacing: -.005em;
-
-        &::before, &::after {
-            content: attr(data-text);
-            display: block;
-            position: relative;
-            padding: 0 .1em;
-            z-index: 1;
-        }
-
-        &::before {
-            position: absolute;
-            -webkit-text-stroke: .07em black;
-            z-index: 0;
-        }
-
-        &:first-child {
-            transform: translate(-.255em, -.25em);
-        }
-
-        &:last-child {
-            --color: #F1F3F5;
-            transform: translate(.255em, .25em);
-        }
-    }
+    box-shadow: 0px 0px 15px rgba($color: #000000, $alpha: 0.2)
 }
 
 /* PARENT ELEMENTS */
 #emblem {
+    font-family: 'Jura', sans-serif;
     position: relative;
-    width: auto;
+    display: flex;
     height: 180px;
-    background-color: var(--myYellow);
+    background-color: var(--myGray);
+    // background: linear-gradient(to bottom, rgba(33, 158, 188, 0.8), var(--myGray));
+}
+
+.ml5 {
+    color: #023047;
+    font-size: 36px;
+    width: 130px;
+    height: 36px;
+    align-self: center;
+    transform: translateY(-20%);
+}
+
+.ml5 .text-wrapper {
+    
+    position: relative;
+    text-align: center;
+    line-height: 1em;
+}
+
+.ml5 .line {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    height: .11rem;
+    width: 85%;
+    background-color: #023047;
+    transform-origin: 0.5 0;
+}
+
+.ml5 .letters {
+    display: block;
+    opacity: 0;
 }
 
 #lowerEmblem {
     position: absolute;
-    bottom: 2.8rem;
-    font-family: 'kanit', sans-serif;
-    color: rgba(0, 0, 0, 0.7);
-    font-size: 0.7rem;
-    font-weight: 100;
-    
+    bottom: 3.4rem;
+    color: rgba(0, 0, 0, 0.3);
+    font-size: 0.5rem;
+    font-weight: 600;
+    animation: fadein 5s;
+
+    @keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }}
 }
 
 #pageLinks {
@@ -115,17 +105,20 @@ html {
     background-color: rgba(44, 105, 165, 0.7);
     border-left: 0.2rem solid crimson;
 }
-</style>
 
+</style>
 
 <template>
 
 <aside id="sidebar" class="flex flex-col">
     <div id="emblem" class="flex justify-center">
-        <div class="wrapper">
-            <span data-text="Marco"></span>
-            <span data-text="Louis"></span>
-        </div>
+        <h1 class="ml5">
+            <span class="text-wrapper">
+                <span class="letters letters-right">Louis</span>
+                <span class="line line2"></span>
+            </span>
+        </h1>
+        
         <div id="lowerEmblem">
             Web developer
         </div>
@@ -136,7 +129,6 @@ html {
         <a href="" class="btn btn--link">Skills</a>
         <a href="" class="btn btn--link">Blog</a>
         <a href="" class="btn btn--link">Gallery</a>
-        <a href="" class="btn btn--link">Contact</a>
     </div>
 
     <div id="socialLinks" class="flex justify-center gap-2">
@@ -145,10 +137,9 @@ html {
         <a href=""><img src="../assets/icons/icon_insta.png" width="24"></a>
     </div>
 </aside>
-    
+
 </template>
 
 
 <script setup>
-
 </script>
