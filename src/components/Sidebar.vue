@@ -111,24 +111,26 @@ html {
 <template>
 
 <aside id="sidebar" class="flex flex-col">
-    <div id="emblem" class="flex justify-center">
-        <h1 class="ml5">
-            <span class="text-wrapper">
-                <span class="letters letters-right">Louis</span>
-                <span class="line line2"></span>
-            </span>
-        </h1>
-        
-        <div id="lowerEmblem">
-            Web developer
+    <router-link to="/">
+        <div id="emblem" class="flex justify-center">
+            <h1 class="ml5">
+                <span class="text-wrapper">
+                    <span class="letters letters-right">Louis</span>
+                    <span class="line line2"></span>
+                </span>
+            </h1>
+            
+            <div id="lowerEmblem">
+                Web developer
+            </div>
         </div>
-    </div>
+    </router-link>
 
     <div id="pageLinks" class="flex flex-col items-center gap-2">
-        <a href="" class="btn btn--link">About</a>
-        <a href="" class="btn btn--link">Skills</a>
-        <a href="" class="btn btn--link">Blog</a>
-        <a href="" class="btn btn--link">Gallery</a>
+        <router-link to="/about" class="btn btn--link">About</router-link>
+        <router-link to="/skills" class="btn btn--link">Skills</router-link>
+        <router-link to="/blog" class="btn btn--link">Blog</router-link>
+        <router-link to="/gallery" class="btn btn--link">Gallery</router-link>
     </div>
 
     <div id="socialLinks" class="flex justify-center gap-2">
@@ -142,4 +144,7 @@ html {
 
 
 <script setup>
+
+
+
 </script>

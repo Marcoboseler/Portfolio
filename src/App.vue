@@ -6,26 +6,25 @@
 }
 
 
- 
 
 </style>
 
 
 
 <template>
-  <div class="main grid grid-cols-[130px_1fr] grid-rows-[1vh]">
+  <div class="main grid grid-cols-[130px_1fr]">
     <SidebarVue>
     </SidebarVue>
     
     <div>&nbsp;
-    </div><!-- First row -->
-    <section>
-      
+    </div>
+    <section class="relative p-8"><!-- First row -->
+      <router-view />
     </section>
 
     <div>&nbsp;
-    </div><!-- Second row -->
-    <section>
+    </div>
+    <section><!-- Second row -->
 
 
     </section>
