@@ -13,6 +13,7 @@ html {
     top: 0;
     overflow-x: hidden;
     
+    color: #000000;
     background-color: var(--myGray);
     box-shadow: 0px 0px 15px rgba($color: #000000, $alpha: 0.2)
 }
