@@ -1,9 +1,5 @@
 <style lang="scss">
 
-html {
-    font-size: 18px;
-}
-
 #sidebar {
     max-width: 130px;
     width: 100%;
@@ -30,7 +26,7 @@ html {
 
 .ml5 {
     color: #023047;
-    font-size: 36px;
+    font-size: 2rem;
     width: 130px;
     height: 36px;
     align-self: center;
@@ -65,7 +61,7 @@ html {
     position: absolute;
     bottom: 3.4rem;
     color: rgba(0, 0, 0, 0.3);
-    font-size: 0.5rem;
+    font-size: 0.563rem;
     font-weight: 600;
     animation: fadein 5s;
 

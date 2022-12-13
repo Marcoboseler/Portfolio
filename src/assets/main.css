@@ -15,6 +15,10 @@
   --myBlue: #219ebc;
 }
 
+html {
+  font-size: 18px;
+}
+
 body {
   max-width: 100%;
   overflow-x: hidden;
