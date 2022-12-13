@@ -1,6 +1,7 @@
 <style lang="scss">
 
 #sidebar {
+    font-family: 'Kanit', sans-serif;
     max-width: 130px;
     width: 100%;
     height: 100%;

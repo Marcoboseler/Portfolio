@@ -1,22 +1,25 @@
 <style>
 /* ANIMATED TEXT */
-.animated-content {
+.wrapper {
+  display: flex;
+  margin-top: 4rem;
   margin-left: 4rem;
-  transform: translateX(3%);
-  margin-top: 3rem;
-  height: 216px;
-  line-height: 54px;
-  font-size: 45px;
-  overflow:hidden;
+  font-size: 2.441rem;
+  align-items: baseline;
+  transform: translateX(1.5%);
 }
 
 .animated-container {
+  display: inline-block;
+  padding-left: 1rem;
+  height: 12rem;
+  line-height: 3rem;
+  overflow:hidden;
   overflow: hidden;
-  height: 54px;
+  height: 3rem;
 }
 
 .animated-list {
-
   /* padding-left: 220px; */
   list-style: none;
   animation-name: change;
@@ -40,22 +43,14 @@
   position: absolute;
   top: 0;
   right: 0;
-  
   width: auto;
-  height: 110vh;
-
-  opacity: 0.95;
-  transform: translate(9%, -20%) rotate(7deg);
-  border-radius: 3px;
-  
+  height: 125vh;
   z-index: -1;
   overflow: hidden;
-}
-
-.title {
-  font-family: 'Roboto', sans-serif;
-  font-weight: 700;
-  font-size: 4.2rem;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  opacity: 0.98;
+  transform: translate(-20%, -30%) rotate(7deg);
+  border-radius: 3px;
 }
 
 .text {
@@ -74,7 +69,7 @@
 }
 
 .text-name {
- font-size: 3.052rem;
+ font-size: 4rem;
  font-weight: 700;
  transform: translateX(1.5%);
  margin-top: 0.4rem;
@@ -82,22 +77,20 @@
 }
 
 .text-passion {
-  font-size: 1.563rem;
-  transform: translateX(3%);
-  letter-spacing: normal;
-
+  font-size: 1.25rem;
+  letter-spacing: -1px;
+  font-weight: 500;
+  transform: translateX(1.5%);
 }
 
 .title svg {
   position: absolute;
-  bottom: 4rem;
+  bottom: 3rem;
   right: 50%;
   transform: translateX(50%);
 }
-
 </style>
 
-LEFT OFF: Class asignments, implement https://codepen.io/yoannhel/pen/DMzjog, change all font sizes
 
 <template>
 
@@ -105,39 +98,34 @@ LEFT OFF: Class asignments, implement https://codepen.io/yoannhel/pen/DMzjog, ch
 <section class="grid grid-rows-[100vh_100vh_100vh_100vh]">
 
   <div class="title relative">
-    <p class="text text-intro block">Hey there...</p>
+    <p class="text text-intro block">Hey there, I'm</p>
+    <p class="text text-name">Marco Louis</p>
+    <p class="text text-name">Böseler</p>
 
-    <p class="text text-name">My name is Marco Louis </p>
-
-
-    <!-- <p class="text text-about">I am a </p> -->
-
-
-
-    <div class="animated-content">
-      <div class="animated-container">
-        
-        <ul class="animated-list">
-          <li class="animated-item">
-            Web Developer
-          </li>
-          <li class="animated-item">
-            Adventurer
-          </li>
-          <li class="animated-item">
-            Polyglot
-          </li>
-          <li class="animated-item">
-            Gamer
-          </li>
-        </ul>
-      </div>  
+    <div class="wrapper">
+      <p class="inline-block">I'm a</p>
+        <div class="animated-container">
+          <ul class="animated-list">
+            <li class="animated-item">
+              Web Developer
+            </li>
+            <li class="animated-item">
+              Wanderer
+            </li>
+            <li class="animated-item">
+              Polyglot
+            </li>
+            <li class="animated-item">
+              Gamer
+            </li>
+          </ul>
+        </div>  
     </div>
+   
+    <p class="text text-passion">with a passion for pixels</p>
+    <p class="text text-passion">and innovation</p>
     
-      <!-- <span id="animatedText">Web developer</span></p> -->
-    
-    
-    <p class="text text-passion">with a passion for pixels and innovation</p>
+  
    
     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
     <path d="M 5.21875 6.6875 L 3.78125 8.09375 L 16 20.3125 L 28.21875 8.09375 L 26.78125 6.6875 L 16 17.46875 Z M 5.21875 13.6875 L 3.78125 15.09375 L 16 27.3125 L 28.21875 15.09375 L 26.78125 13.6875 L 16 24.46875 Z"></path>

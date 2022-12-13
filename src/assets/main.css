@@ -25,7 +25,7 @@ body {
   
   color: #212427;
   background-color: var(--myGray);
-  font-family: 'Kanit', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 ::-webkit-scrollbar {

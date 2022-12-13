@@ -5,13 +5,7 @@
   margin: 0 auto 2rem;
 }
 
-
-
-
-
 </style>
-
-
 
 <template>
   <div class="main grid grid-cols-[130px_1fr]">
