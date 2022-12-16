@@ -8,18 +8,18 @@
 
 <template>
   <div class="main grid grid-cols-[130px_1fr]">
-    <SidebarVue> <!-- Left Sidebar -->
-    </SidebarVue>
+    <sidebarVue> <!-- Left Sidebar -->
+    </sidebarVue>
     
     <div>&nbsp;
     </div>
-    <section class="relative p-8"><!-- Right content column -->
+    <section class="relative"><!-- Right content column -->
       <router-view />
     </section>
   </div>
 </template>
 
 <script setup>
-import SidebarVue from './components/Sidebar.vue';
+import sidebarVue from './components/sidebar.vue';
 
 </script>
