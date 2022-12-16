@@ -85,11 +85,11 @@
   width: auto; height: 125vh; z-index: -1; 
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   border-radius: 3px; opacity: 0.98;
-  transform: translate(-20%, -30%) rotate(7deg);
+  transform: translate(15%, -30%) rotate(7deg);
 }
 
 .sub-container { 
-  margin-top: 2rem;
+  margin-top: 5rem;
 }
 .text {
   margin-left: 4.5rem;
@@ -120,31 +120,41 @@
 }
 
 
+//PARALLAX SECTION
+#stickyStory {
+  font-size: 3rem; font-weight: 800;
+  position:sticky; top:25%; z-index:2;
+  padding-left: 5.5rem; margin-bottom: 3rem;
+
+  &::before {
+    content: ""; background: rgba(238,111,87,0.5);
+    position: absolute; left: 7%; bottom: 1rem; z-index: -1;
+    width: 10rem; height: 14px;
+    transform: skew(-12deg) translate(-10%, 15%);
+}
+}
 
 .parallax {
-  display: flex; align-items: center; justify-content: center;
+  display: grid;
+  grid-template-columns: 32% 1fr 15%;
   position: relative;
   font-family: 'Montserrat'; line-height: 2; letter-spacing: 2;
 
   
+  & p {
+    
+    grid-column: 2;
+    font-size: 1.25rem; font-weight: 500; 
+    
+  }
+  
   &.story {                    //Header segment   
     height: 30rem;
-            
-
-    & p {
-      transform: translateX(-90%);
-      font-size: 4rem; font-weight: 800;
-    }
   }
 
   &.intro {                    //Intro text segment
     height: 30rem;      
     background-color:cornsilk ;
-
-    & p {
-      width: 65%;
-      font-size: 1.25rem; font-weight: 500; 
-    }
   }
 
   &.college {                 //College image segment
@@ -160,41 +170,30 @@
     }
   }
 
-  &.fire {                    //Internship segment
+  &.internship {               //Internship segment
     height: 30rem;
-    background-color:cornsilk ;
-
-    & p {
-      width: 65%;
-      font-size: 1.25rem; font-weight: 500; 
-    }
   }
+
 
   &.deepdive {                 //Deepdive segment
     height: 100vh;
-
-    & p {
-      width: 50%;
-      font-size: 1.25rem; font-weight: 500; 
+   
+    & p.text--1 {
+      // position: absolute; top: 25%;
     }
 
+    & p.text--2 {
+      // position: absolute; bottom: 20%;
+    }
+    
     &::before {
       content: '';
-      position: absolute; top: 0; left: 0; bottom: 0; right: 0; z-index: -1; 
-      background-image: url("../assets/images/maldives.jpg");
-      background-size:cover; opacity: 0.65;
-      background-attachment: fixed; background-position: center;
+      position: absolute; top: 0; left: 0; bottom: 0; right: 0; z-index: -1;
+      background-image: url("../assets/images/bg3.jpg");
+      background-size: cover;
+      background-attachment: fixed;
       background-repeat: no-repeat; 
-    }
-  }
-
-  &.graduate {
-    height: 30rem;
-    background-color: cornsilk;
-
-    & p {
-      width: 70%;
-      font-size: 1.25rem; font-weight: 500; 
+      -webkit-mask-image:-webkit-gradient(linear, left bottom, left top, from(rgba(241, 243, 245, 1)), to(rgba(0,0,0,0)))
     }
   }
 }
@@ -206,13 +205,13 @@
 <template>
 <section class="grid grid-rows-[100vh_1fr_100vh_100vh]">    <!------ LANDING PAGE ------->
   <div class="title relative p-8">
-    <img src="../assets/images/marfdco.jpg" id="homeIMG" alt="image not found">
-    <p class="text text-hey">Hey there, I'm</p>
+    <img src="../assets/images/marfco.jpg" id="homeIMG" alt="image not found">
+    <p class="text text-hey">Hey there, I am</p>
     <p class="text text-name">Marco Louis</p>
     <p class="text text-name">Böseler</p>
 
     <div class="wrapper">
-      <p class="inline-block">Also a</p>
+      <p class="inline-block">I'm a</p>
         <div class="animated-container">
           <ul class="animated-list">
             <li class="animated-item">
@@ -236,72 +235,58 @@
     
     <button @click="scrollBottom()" class="btn-flip" data-back="with me" data-front="Connect"></button>
   
-    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
-    <path d="M 5.21875 6.6875 L 3.78125 8.09375 L 16 20.3125 L 28.21875 8.09375 L 26.78125 6.6875 L 16 17.46875 Z M 5.21875 13.6875 L 3.78125 15.09375 L 16 27.3125 L 28.21875 15.09375 L 26.78125 13.6875 L 16 24.46875 Z"></path>
-    </svg>
   </div>
 
 
                                                   <!------ ABOUT PAGE ------->
   <div class="sub-container">            
-
-    <div class="parallax story">
-      <p>My story</p> 
-      MAKE THIS STICKY TO LEFT TOP AND ALIGN TEXT RIGHT OF IT, KEEP IT WHEN SCROLLING
-    </div>
-
+    <p id="stickyStory">My story</p> 
 
     <div class="parallax intro">
-
-      <p>
-        After recently obtaining my college degree in software 
-        development, I wanted a personal project to really indulge
-        myself into custom web design and fortify my skills as I discovered  
-        this passion of mine.
-
-      </p>
-
+      <div class="text-flex">
+        <p>
+          After recently obtaining my college degree in software 
+          development, I wanted a personal project to really indulge
+          myself into custom web design and fortify my skills as I discovered  
+          this passion of mine.
+        </p>
+      </div>
     </div>
-
 
     <div class="parallax college"></div>
 
-
-    <div class="parallax fire">
-
-      <p>
-        During my first internship I was introduced to
-        the corporate world of software engineering. I followed along and 
-        wrote code in various languages, prominently in Java. But I felt 
-        something was missing, like there was a fire in me still, which 
-        wasn't ignited just yet.
-
-      </p>
-
+    <div class="parallax internship">
+      <div class="text-flex">
+        <p>
+          During my first internship I was introduced to
+          the corporate world of software engineering. I followed along and 
+          wrote code in various languages, prominently in Java. But I felt 
+          something was missing, like there was a fire in me still, which 
+          wasn't ignited just yet.
+        </p>
+      </div>
+      
     </div>
 
     <div class="parallax deepdive">
 
-      <p>
-        That's when I dove deep into web development,
-        where I found the ability to express my creative thoughts like never before.
-
-      </p>
-
+      <div class="text-flex">
+        <p class="text--1">
+          That's when I dove deep into web development,
+          where I found the ability to express my creative thoughts like never before.
+        </p>
+      </div>
+      
+      <div class="text-flex">
+        <p class="text--2">
+          And so, I decided to do my graduating internship at a local business that operates
+          a webshop through which they sell electronic spare parts to all over the world.
+          Here I was properly introduced to web-app development and started this exciting
+          journey as a front-end developer.
+        </p>
+      </div>
+        
     </div>
-
-
-    <div class="parallax graduate">
-
-      <p>
-        And so, I decided to do my graduating internship at a local business that operates
-        a webshop through which they sell electronic spare parts to all over the world.
-        Here I was properly introduced to web-app development and started this exciting
-        journey as a front-end developer.
-      </p>
-
-    </div>
-  
   </div>
 
 
