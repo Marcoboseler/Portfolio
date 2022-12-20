@@ -121,31 +121,42 @@
 
 
 //PARALLAX SECTION
-#stickyStory {
+.stickyStory {
+  display: grid; grid-template-columns: 34% 1fr;
+  justify-content: center;
   font-size: 3rem; font-weight: 800;
-  position:sticky; top:25%; z-index:2;
-  padding-left: 5.5rem; margin-bottom: 3rem;
+  position:sticky; top:40%; z-index:2;
+  
+  margin-bottom: 4rem;
 
-  &::before {
-    content: ""; background: rgba(238,111,87,0.5);
-    position: absolute; left: 7%; bottom: 1rem; z-index: -1;
-    width: 10rem; height: 14px;
-    transform: skew(-12deg) translate(-10%, 15%);
-}
+  // transform: scale(1);
+  
+
+  & p {
+    transform-origin: bottom left;
+    padding-left: 30%;
+    
+
+    &::before {
+      content: ""; background: rgba(238,111,87,0.5);
+      position: absolute; left: 7%; bottom: 1rem; z-index: -1;
+      width: 10rem; height: 14px;
+      transform: skew(-12deg) translate(50%, 15%);
+    }
+  }
 }
 
 .parallax {
   display: grid;
-  grid-template-columns: 32% 1fr 15%;
+  grid-template-columns: 34% 1fr 13%;
   position: relative;
   font-family: 'Montserrat'; line-height: 2; letter-spacing: 2;
-
   
-  & p {
-    
-    grid-column: 2;
-    font-size: 1.25rem; font-weight: 500; 
-    
+  .text-flex {
+  display: inline-flex;
+  align-items: center;
+  grid-column: 2 / 3;
+  font-size: 1.25rem; font-weight: 500; 
   }
   
   &.story {                    //Header segment   
@@ -173,7 +184,6 @@
   &.internship {               //Internship segment
     height: 30rem;
   }
-
 
   &.deepdive {                 //Deepdive segment
     height: 100vh;
@@ -205,7 +215,7 @@
 <template>
 <section class="grid grid-rows-[100vh_1fr_100vh_100vh]">    <!------ LANDING PAGE ------->
   <div class="title relative p-8">
-    <img src="../assets/images/marfco.jpg" id="homeIMG" alt="image not found">
+    <img src="../assets/images/marco.jpg" id="homeIMG" alt="image not found">
     <p class="text text-hey">Hey there, I am</p>
     <p class="text text-name">Marco Louis</p>
     <p class="text text-name">Böseler</p>
@@ -239,8 +249,10 @@
 
 
                                                   <!------ ABOUT PAGE ------->
-  <div class="sub-container">            
-    <p id="stickyStory">My story</p> 
+  <div class="sub-container">
+    <div class="stickyStory" >
+      <p id="stickyStory">My story</p> 
+    </div>            
 
     <div class="parallax intro">
       <div class="text-flex">
@@ -289,17 +301,13 @@
     </div>
   </div>
 
-
+/////////////////////////////////////
 
   <div class="sub-container">
     
     SKILLS
 
   </div>
-
-
-
-
 
   <div class="sub-container" id="contact">
     Content
@@ -325,6 +333,34 @@ export default {
     }
   }
 }
+
+window.addEventListener('scroll', () => {
+
+  let scrollPosition = window.scrollY
+  console.log("scroll: " + window.scrollY); //vanaf 200 moet t kleiner worden tot 1000
+
+/*
+    //  at 200, scale must be 2
+        steeds 0.125 omlaag bij elke 100 Yscroll
+    //  at 1000, scale must be 1
+    //
+    //   scrollpos - 200 /800
+*/
+
+  switch(scrollPosition){
+     
+  }
+
+  if (scrollPosition >= 300 && scrollPosition <= 900) {
+    var scaleFactor = 2 - ((scrollPosition - 200) / 600);
+
+    let stickyContainer = document.getElementById('stickyStory')
+    stickyContainer.style.transform = "scale(" + scaleFactor + ")";
+  }
+
+
+
+})
 
 
 </script>
